@@ -1,0 +1,43 @@
+﻿@using LovePicture.Web.Extends
+@using LovePicture.Com
+@using LovePicture.Model.Models
+@model List<ToModule>
+@{
+    ViewData["Title"] = "活动专区";
+}
+<div class="jumbotron">
+    <h1>@ViewData["Title"]</h1>
+</div>
+<hr />
+<div class="row">
+    @if (Model.Count <= 0)
+    {
+        <div class="text-center">
+            <h4>暂无任何活动，敬请期待吧...</h4>
+        </div>
+    }
+    else
+    {
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3" title="@item.Name：@item.Des">
+                <div class="thumbnail">
+                    @*<img src="@item.MaxPic" alt="@item.Name" style="height: 200px; width: 100%; display: block;" />*@
+                    <div class="caption">
+                        <h3>@item.Name.FomartSubStr(10)</h3>
+                        <p>@item.Des.FomartSubStr(15)</p>
+                        <p>
+                            <a href="/pictures/pictures/@item.Id-1" class="btn btn-primary">浏 览</a>
+                            <a href="/usercenter/upphoto/@item.Id" class="btn btn-default">留 图</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <pager pager-option="ViewBag.PagerOption as MoPagerOption"></pager>
+    </div>
+</div>

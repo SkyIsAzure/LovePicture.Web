@@ -1,0 +1,44 @@
+﻿@using LovePicture.Web.Extends
+@using LovePicture.Com
+@using LovePicture.Model.Models
+@model ToContent
+@{
+    ViewData["Title"] = $"{Model.Name}";
+}
+<div class="row">
+    <h3><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> @ViewData["Title"]</h3>
+    <hr />
+    <div class="text-center">
+        <h3>@Model.Name</h3>
+        <br />
+        @Model.Des
+        <br />
+        @if (Model.ToContentFiles.Count <= 0)
+        {
+            <img src="@(Model.MinPic??Model.MaxPic)" id="img_Photo" class="img-thumbnail" />
+            <br />
+        }
+        else
+        {
+            var i = 1;
+            foreach (var item in Model.ToContentFiles)
+            {
+                <img src="@(item.MinPic??item.MaxPic)" id="img_Photo" class="img-thumbnail" />
+                <h4>图-@(i++)</h4>
+                <br />
+            }
+        }
+    </div>
+    <br />
+    <div class="form-group text-center">
+        <button type="button" class="btn btn-default">浏 览 <span class="badge">@Model.ReadNum</span></button>
+        <button type="button" class="btn btn-default" name="btnZan" data-id="@Model.Id" data-type="1">点 赞 <span id="num_@Model.Id" class="badge">@Model.ZanNum</span></button>
+        <span id="msg_@Model.Id" style="color:red"></span>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        lovepicture.picZanOrRead("btnZan");
+    })
+</script>

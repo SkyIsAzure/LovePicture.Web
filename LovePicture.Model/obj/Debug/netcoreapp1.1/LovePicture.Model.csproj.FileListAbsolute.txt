@@ -1,0 +1,7 @@
+D:\F\学习\vs2017\netcore\netcore01\LovePicture.Model\bin\Debug\netcoreapp1.1\LovePicture.Model.deps.json
+D:\F\学习\vs2017\netcore\netcore01\LovePicture.Model\bin\Debug\netcoreapp1.1\LovePicture.Model.dll
+D:\F\学习\vs2017\netcore\netcore01\LovePicture.Model\obj\Debug\netcoreapp1.1\LovePicture.Model.AssemblyInfo.cs
+D:\F\学习\vs2017\netcore\netcore01\LovePicture.Model\bin\Debug\netcoreapp1.1\LovePicture.Model.pdb
+D:\F\学习\vs2017\netcore\netcore01\LovePicture.Model\obj\Debug\netcoreapp1.1\LovePicture.Model.dll
+D:\F\学习\vs2017\netcore\netcore01\LovePicture.Model\obj\Debug\netcoreapp1.1\LovePicture.Model.pdb
+D:\F\学习\vs2017\netcore\netcore01\LovePicture.Model\obj\Debug\netcoreapp1.1\LovePicture.Model.csprojResolveAssemblyReference.cache

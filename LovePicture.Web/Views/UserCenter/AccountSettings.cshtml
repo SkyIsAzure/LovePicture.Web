@@ -1,0 +1,43 @@
+﻿@model LovePicture.Model.MoClass.MoUserInfo
+
+@{
+    ViewData["Title"] = "账户设置";
+    var userInfo = ViewData["MyUserInfo"] as LovePicture.Model.MoClass.MoUserInfo;
+    userInfo.Status = 2;
+}
+<style type="text/css">
+    h5 {
+        padding-top: 10px
+    }
+</style>
+<div class="row">
+    @await Html.PartialAsync("UserCenterGroup", userInfo)
+    <div class="col-md-10">
+        <h3><span class="glyphicon glyphicon-user" aria-hidden="true"></span> @ViewData["Title"]</h3>
+        <hr />
+        <div class="media">
+            <div class="media-left text-center">
+                <img class="media-object img-thumbnail" src="@Model.HeadPhoto" style="width: 140px; height: 140px;" alt="@Model.NickName">
+                <div style="padding-top:10px">
+                    <a href="/usercenter/upheadphoto">换一换</a>
+                </div>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading">
+                    昵称：@Model.NickName
+                    <a href="/usercenter/modifyuser" class="btn btn-default">修改信息</a>
+                    <a href="/usercenter/modifypwd" class="btn btn-default">修改密码</a>
+                </h4>
+                <h5 class="media-heading">爱心等级：@Model.LevelNumVal 级 - @Model.LevelNum 分</h5>
+                <h5 class="media-heading">园龄：@Model.CreateTime.FormatDateToNow()</h5>
+                <h5 class="media-heading">性别：@(Model.Sex ? "男" : "女")</h5>
+                <h5 class="media-heading">生日：@Model.Birthday</h5>
+
+                <h5 class="media-heading">手机：@Model.Tel.FomartPhone()</h5>
+                <h5 class="media-heading">邮箱：@Model.Email.FomartPhone()</h5>
+                <h5 class="media-heading">博客：@Model.Blog</h5>
+                自我介绍：@Model.Introduce
+            </div>
+        </div>
+    </div>
+</div>

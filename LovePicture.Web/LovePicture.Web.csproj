@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+	<RuntimeIdentifiers>win7-x64;</RuntimeIdentifiers>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <Content Include="wwwroot\images\ailiutu_user.png" />
+    <Content Include="wwwroot\images\load.gif" />
+    <Content Include="wwwroot\js\site.js" />
+    <Content Include="wwwroot\js\site.min.js" />
+    <Content Include="wwwroot\lib\bootstrap\dist\css\bootstrap-datetimepicker.css" />
+    <Content Include="wwwroot\lib\bootstrap\dist\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="wwwroot\lib\bootstrap\dist\js\bootstrap-datetimepicker.js" />
+    <Content Include="wwwroot\lib\bootstrap\dist\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="wwwroot\lib\bootstrap\dist\js\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="wwwroot\tpl\MsgBox.html" />
+    <Content Include="wwwroot\tpl\SettingTel.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="wwwroot\tpl\SettingEmail.html" />
+    <Content Include="wwwroot\upfile\contentphoto\20170422135637302.gif">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\upfile\contentphoto\Thumbnail\" />
+    <Folder Include="wwwroot\upfile\contentphoto\Thumbnail\" />
+    <Folder Include="wwwroot\upfile\headphoto\Thumbnail\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0-msbuild3-final" />
+    <DotNetCliToolReference Include="BundlerMinifier.Core" Version="2.2.281" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LovePicture.Com\LovePicture.Com.csproj" />
+    <ProjectReference Include="..\LovePicture.Model\LovePicture.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\tpl\MsgBox.html">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
